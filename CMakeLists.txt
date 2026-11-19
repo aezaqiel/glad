@@ -12,15 +12,15 @@ set(CMAKE_POSITION_INDEPENDENT_CODE ON)
 find_package(OpenGL REQUIRED)
 
 add_library(glad STATIC
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/gl.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/glad.c
 )
 
 target_sources(glad
 PUBLIC
-    ${CMAKE_CURRENT_SOURCE_DIR}/include/glad/gl.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/include/glad/glad.h
     ${CMAKE_CURRENT_SOURCE_DIR}/include/KHR/khrplatform.h
 PRIVATE
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/gl.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/glad.c
 )
 
 target_include_directories(${PROJECT_NAME}
@@ -38,10 +38,10 @@ if(UNIX)
 endif()
 
 source_group("Sources" FILES
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/gl.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/glad.c
 )
 
 source_group("Headers" FILES
-    ${CMAKE_CURRENT_SOURCE_DIR}/include/glad/gl.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/include/glad/glad.h
     ${CMAKE_CURRENT_SOURCE_DIR}/include/KHR/khrplatform.h
 )
